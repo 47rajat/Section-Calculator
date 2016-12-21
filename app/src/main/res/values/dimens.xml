@@ -5,4 +5,9 @@
     <dimen name="navigation_drawer_width">240dp</dimen>
     <dimen name="navigation_drawer_item_top_margin">8dp</dimen>
     <dimen name="navigation_item_seperator">8dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="home_screen_scroll_elevation">4dp</dimen>
 </resources>
