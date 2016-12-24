@@ -9,5 +9,8 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="home_screen_scroll_elevation">4dp</dimen>
+    
+    <!--I section fragment dimensions-->
+    <dimen name="input_top_margin">16dp</dimen>
+    <dimen name="section_image_height">400dp</dimen>
 </resources>

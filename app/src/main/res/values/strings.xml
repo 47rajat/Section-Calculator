@@ -14,4 +14,9 @@
     <string name="nav_l_section">L section</string>
     <string name="choose_a_section">Choose a section</string>
     <string name="home_screen_greet">Start Computing</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- HomeScreenFragment Strings -->
 </resources>

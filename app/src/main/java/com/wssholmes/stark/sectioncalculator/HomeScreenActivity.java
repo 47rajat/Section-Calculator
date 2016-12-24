@@ -1,5 +1,6 @@
 package com.wssholmes.stark.sectioncalculator;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +14,12 @@ import android.view.MenuItem;
 public class HomeScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private String[] mSectionArrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSectionArrayList = getResources().getStringArray(R.array.section_titles);
         setContentView(R.layout.activity_home_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -28,6 +32,18 @@ public class HomeScreenActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(savedInstanceState == null){
+            addHomeScreenFragment();
+        }
+    }
+
+    private void addHomeScreenFragment() {
+        Fragment fragment = new HomeScreenFragment();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_home_screen, fragment)
+                .commit();
+
     }
 
     @Override
@@ -69,7 +85,10 @@ public class HomeScreenActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_i_section) {
-            // Handle the camera action
+            // Handle the I section action
+            addIsectionFragment();
+            setTitle(mSectionArrayList[0]);
+
         } else if (id == R.id.nav_t_section) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -79,5 +98,12 @@ public class HomeScreenActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void addIsectionFragment() {
+        Fragment fragment = new ISectionFragment();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_home_screen, fragment)
+                .commit();
     }
 }
